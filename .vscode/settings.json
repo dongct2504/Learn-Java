@@ -1,13 +1,9 @@
 {
   "java.project.referencedLibraries": [
-    "lib/**/*.jar"
+    "lib/**/*.jar",
   ],
   "java.project.sourcePaths": [
-    "testing",
-    "s4_other_essential_skills",
-    "s3_object_oriented",
-    "s2_essential_skills",
     "s1_class_object",
-    "s5_dates_times"
+    "s4_other_essential_skills"
   ]
 }
