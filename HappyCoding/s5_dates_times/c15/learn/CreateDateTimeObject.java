@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.DayOfWeek;
 
-public class DateTimeTest {
+public class CreateDateTimeObject {
 
 	public static void main(String[] args) {
 		// useNow();
