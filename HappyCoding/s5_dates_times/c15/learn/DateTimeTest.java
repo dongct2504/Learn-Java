@@ -4,15 +4,18 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.DayOfWeek;
 
 public class DateTimeTest {
 
 	public static void main(String[] args) {
 		// useNow();
 		// useOf();
-		useParse();
+		// useParse();
+		getDateTimeParts();
 	}
 
+	// === How to create date and time objects === //
 	public static void useNow() {
 		LocalDate currentDate = LocalDate.now();
 		System.out.println(currentDate);
@@ -49,4 +52,36 @@ public class DateTimeTest {
 		LocalDateTime startDateTime3 = LocalDateTime.parse("2023-10-31T02:32:45.123456789");
 		System.out.println(startDateTime3);
 	}
+
+	// === How to get date and time parts === //
+	public static void getDateTimeParts() {
+		// Assume a current date/time of October 20, 2023 15:07:30.898000000
+		LocalDateTime currentDateTime = LocalDateTime.of(2023, 10, 20, 15, 7, 30, 898000000);
+
+		// The LocalDateTime class supports all of the get methods
+		int year = currentDateTime.getYear(); // 2023
+		Month month = currentDateTime.getMonth(); // OCTOBER
+		int monthValue = currentDateTime.getMonthValue(); // 10
+		int day = currentDateTime.getDayOfMonth(); // 20
+		System.out.println("Month/Day/Year --> " + monthValue + "/" + day + "/" + year);
+		
+		int dayOfYear = currentDateTime.getDayOfYear(); // 293
+		DayOfWeek dayOfWeek = currentDateTime.getDayOfWeek(); // FRIDAY
+		System.out.println(dayOfYear + ", " + dayOfWeek);
+		
+		int hour = currentDateTime.getHour(); // 15
+		int minute = currentDateTime.getMinute(); // 7
+		int second = currentDateTime.getSecond(); // 30
+		int nano = currentDateTime.getNano(); // 898000000
+		System.out.println(hour + ":" + minute + ":" + second + "." + nano);
+	}
 }
+
+
+
+
+
+
+
+
+
