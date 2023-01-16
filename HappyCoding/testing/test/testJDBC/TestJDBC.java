@@ -9,7 +9,7 @@ public class TestJDBC {
     String uname = "root";
     String passwd = "01646245557";
 
-    String query = "SELECT * FROM login";
+    String query = "SELECT * FROM student";
 
     try {
       Connection con = DriverManager.getConnection(url, uname, passwd);
@@ -19,7 +19,7 @@ public class TestJDBC {
       ResultSet resultSet = statement.executeQuery(query);
 
       while (resultSet.next()) {
-        String name = resultSet.getString("uname");
+        String name = resultSet.getString("name");
         System.out.println(name);
       }
     } catch (SQLException e) {

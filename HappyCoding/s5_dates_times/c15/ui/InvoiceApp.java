@@ -1,12 +1,7 @@
-package c14.ui;
+package c15.ui;
 
-import c14.business.Invoice;
-import c14.business.LineItem;
-import c14.business.Product;
 import c15.business.*;
 import c15.db.ProductDB;
-import c15.ui.Console;
-import c15.ui.StringUtil;
 
 public class InvoiceApp {
 

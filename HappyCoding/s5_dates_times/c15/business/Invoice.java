@@ -1,16 +1,19 @@
-package c14.business;
+package c15.business;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
-
-import c15.business.LineItem;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class Invoice {
 	
 	private ArrayList<LineItem> lineItems;
+	private LocalDateTime invoiceDate;
 	
 	public Invoice() {
 		lineItems = new ArrayList<>();
+		invoiceDate = LocalDateTime.now();
 	}
 	
 	// a method that add a line item
@@ -36,7 +39,27 @@ public class Invoice {
 	public String getTotalFormatted() {
 		return NumberFormat.getCurrencyInstance().format(getTotal());
 	}
+	
+	public void setInvoiceDate(LocalDateTime invoiceDate) {
+		this.invoiceDate = invoiceDate;
+	}
+	
+	public LocalDateTime getInvoiceDate() {
+		return invoiceDate;
+	}
+	
+	public String getInvoiceDateFormatted() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT, FormatStyle.MEDIUM);
+		return dtf.format(invoiceDate);
+	}
 }
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,4 @@
-package c14.business;
-
-import c15.business.Product;
+package c15.business;
 
 public class Software extends Product {
 

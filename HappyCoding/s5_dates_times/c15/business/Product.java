@@ -1,8 +1,6 @@
-package c14.business;
+package c15.business;
 
 import java.text.NumberFormat;
-
-import c15.business.Product;
 
 /**
  * The <code>Product</code> class defines a product and is used

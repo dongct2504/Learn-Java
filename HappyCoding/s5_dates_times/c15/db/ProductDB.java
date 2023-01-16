@@ -1,9 +1,9 @@
-package c14.db;
+package c15.db;
 
-import c15.business.Album;
 import c15.business.Book;
-import c15.business.Product;
 import c15.business.Software;
+import c15.business.Album;
+import c15.business.Product;
 
 public class ProductDB {
 
@@ -51,6 +51,7 @@ public class ProductDB {
       album.setDescription("Sgt. Peppers Lonely Hearts Club Band");
       album.setPrice(14.99);
       album.setArtist("The Beatles");
+
       product = album; // set Product object equal to the Software object		}
 		}
 
