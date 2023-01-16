@@ -1,7 +1,5 @@
 package c14.business;
 
-import c15.business.Product;
-
 public class Book extends Product {
 
 	private String author;

@@ -1,7 +1,5 @@
 package c14.business;
 
-import c15.business.Product;
-
 public class Album extends Product {
 
 	private String artist;

@@ -3,8 +3,6 @@ package c14.business;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
-import c15.business.LineItem;
-
 public class Invoice {
 	
 	private ArrayList<LineItem> lineItems;

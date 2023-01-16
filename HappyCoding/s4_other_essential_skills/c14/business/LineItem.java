@@ -2,8 +2,6 @@ package c14.business;
 
 import java.text.NumberFormat;
 
-import c15.business.Product;
-
 public class LineItem {
 	
 	private Product product;
