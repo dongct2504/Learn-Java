@@ -1,10 +1,7 @@
-package c15.ui;
+package dong.ui;
 
-import c15.business.Invoice;
-import c15.business.LineItem;
-import c15.business.Product;
-
-import c15.db.ProductDB;
+import dong.business.*;
+import dong.db.ProductDB;
 
 public class InvoiceApp {
 
@@ -32,6 +29,11 @@ public class InvoiceApp {
 
 	public static void displayInvoice(Invoice invoice) {
 		StringBuilder sb = new StringBuilder();
+		sb.append(StringUtil.pad("Invoice date:", 20));
+		sb.append(invoice.getInvoiceDateFormatted() + "\n");
+		sb.append(StringUtil.pad("Invoice due date:", 20));
+		sb.append(invoice.getDueDateFormatted() + "\n\n");
+		
 		sb.append(StringUtil.pad("Description", 40));
 		sb.append(StringUtil.pad("Price", 10));
 		sb.append(StringUtil.pad("Qty", 8));

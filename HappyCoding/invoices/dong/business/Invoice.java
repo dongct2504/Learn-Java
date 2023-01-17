@@ -1,4 +1,4 @@
-package c15.business;
+package dong.business;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -52,6 +52,15 @@ public class Invoice {
 	public String getInvoiceDateFormatted() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT, FormatStyle.MEDIUM);
 		return dtf.format(invoiceDate);
+	}
+	
+	public LocalDateTime getDueDate() {
+		return invoiceDate.plusDays(30);
+	}
+	
+	public String getDueDateFormatted() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT, FormatStyle.MEDIUM);
+		return dtf.format(getDueDate());
 	}
 }
 
