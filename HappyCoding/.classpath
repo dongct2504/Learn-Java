@@ -5,7 +5,6 @@
 	<classpathentry kind="src" path="s2_essential_skills"/>
 	<classpathentry kind="src" path="s3_object_oriented"/>
 	<classpathentry kind="src" path="s4_other_essential_skills"/>
-	<classpathentry kind="src" path="s5_dates_times"/>
 	<classpathentry kind="src" path="testing"/>
 	<classpathentry kind="src" path="invoices"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-j-8.0.31.jar"/>

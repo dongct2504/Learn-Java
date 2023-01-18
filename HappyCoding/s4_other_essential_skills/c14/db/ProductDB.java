@@ -51,6 +51,7 @@ public class ProductDB {
       album.setDescription("Sgt. Peppers Lonely Hearts Club Band");
       album.setPrice(14.99);
       album.setArtist("The Beatles");
+
       product = album; // set Product object equal to the Software object		}
 		}
 
