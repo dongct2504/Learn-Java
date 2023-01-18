@@ -1,9 +1,9 @@
-package c14.ui;
+package learn.ui;
 
-import c14.business.Invoice;
-import c14.business.LineItem;
-import c14.business.Product;
-import c14.db.ProductDB;
+import learn.business.Invoice;
+import learn.business.LineItem;
+import learn.business.Product;
+import learn.db.ProductDB;
 
 public class InvoiceApp {
 

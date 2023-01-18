@@ -1,9 +1,9 @@
-package c14.db;
+package learn.db;
 
-import c14.business.Album;
-import c14.business.Book;
-import c14.business.Product;
-import c14.business.Software;
+import learn.business.Album;
+import learn.business.Book;
+import learn.business.Product;
+import learn.business.Software;
 
 public class ProductDB {
 

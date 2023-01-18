@@ -1,4 +1,4 @@
-package c14.business;
+package learn.business;
 
 public class Book extends Product {
 
