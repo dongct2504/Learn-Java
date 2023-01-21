@@ -10,7 +10,7 @@
 	<classpathentry kind="src" path="s3_object_oriented"/>
 	<classpathentry excluding="c17/fileNIO2/files/" kind="src" path="s4_other_essential_skills"/>
 	<classpathentry kind="src" path="testing"/>
-	<classpathentry kind="src" path="invoices"/>
+	<classpathentry excluding="files/" kind="src" path="invoices"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-j-8.0.31.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
