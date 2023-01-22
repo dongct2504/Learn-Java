@@ -1,6 +1,7 @@
 package dong.business;
 
 import java.text.NumberFormat;
+import dong.ui.StringUtil;
 
 /**
  * The <code>Product</code> class defines a product and is used
@@ -72,7 +73,12 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return description;
+		StringBuilder sb = new StringBuilder();
+		sb.append(StringUtil.pad(code, 15));
+		sb.append(StringUtil.pad(description, 40));
+		sb.append(StringUtil.pad(getPriceFormatted(), 10));
+		
+		return sb.toString();
 	}
 
 	@Override

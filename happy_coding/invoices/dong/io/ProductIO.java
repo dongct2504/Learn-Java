@@ -7,7 +7,7 @@ import dong.business.Product;
 
 public class ProductIO {
 
-	private static final Path productsPath = Paths.get("./s4_other_essential_skills/invoices/files/products.txt");
+	private static final Path productsPath = Paths.get("./invoices/files/products.txt");
 	private static final File productsFile = productsPath.toFile();
 	private static final String FIELD_SEP = "\t";
 	private static List<Product> products = getAll();
@@ -38,12 +38,14 @@ public class ProductIO {
 				e.printStackTrace();
 				return null;
 			}
+		} else {
+			System.out.println("Path doesn't exist!!");
 		}
 
 		return products;
 	}
 
-	private static Product get(String code) {
+	public static Product get(String code) {
 		for (Product p : products) {
 			if (p.getCode().equals(code)) {
 				return p;
