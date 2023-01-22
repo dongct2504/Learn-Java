@@ -43,7 +43,7 @@ public class UpdateProducts {
 			} else if (action.equalsIgnoreCase("exit")) {
 				System.out.println("Bye!");
 			} else {
-				System.out.println("Invalid command");
+				System.out.println("Invalid command, Try again!!");
 			}
 
 		}
@@ -68,6 +68,8 @@ public class UpdateProducts {
 		Product product = new Product(code, description, price);
 		
 		ProductIO.add(product);
+		
+		System.out.println("\n" + product.getDescription() + " was added to the database");
 	}
 	
 	public static void deleteProduct() {
@@ -76,9 +78,9 @@ public class UpdateProducts {
 		Product product = ProductIO.get(code);
 		if (product != null) {
 			ProductIO.delete(product);
-			System.out.println("Successfully remove product");
+			System.out.println("\n" + product.getDescription() + " was delete from the database");
 		} else {
-			System.out.println("Can not remove product");
+			System.out.println("\nCan not remove product");
 		}
 
 	}

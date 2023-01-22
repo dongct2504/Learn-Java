@@ -2,3 +2,4 @@ java	Murach's Beginning Java	57.5
 jsps	Murach's Java Servlets and JSP	57.5
 txtp	TextPad	20.0
 mcb2	Murach's Mainframe COBOL	59.5
+bjava	Dong's Java journey	99.0

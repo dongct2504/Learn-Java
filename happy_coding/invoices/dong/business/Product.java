@@ -4,8 +4,9 @@ import java.text.NumberFormat;
 import dong.ui.StringUtil;
 
 /**
- * The <code>Product</code> class defines a product and is used
- * by the <code>LineItem</code> and <code>ProductDB</code> classes.
+ * The <code>Product</code> class defines a product and is used by the
+ * <code>LineItem</code> and <code>ProductDB</code> classes.
+ * 
  * @author keilar
  * @version 0.0.1
  */
@@ -33,6 +34,7 @@ public class Product {
 
 	/**
 	 * Gets the product code
+	 * 
 	 * @return A <code>String</code> for the product code.
 	 */
 	public String getCode() {
@@ -41,6 +43,7 @@ public class Product {
 
 	/**
 	 * Sets the product code
+	 * 
 	 * @param code A <code>String</code> for the product code.
 	 */
 	public void setCode(String code) {
@@ -77,7 +80,7 @@ public class Product {
 		sb.append(StringUtil.pad(code, 15));
 		sb.append(StringUtil.pad(description, 40));
 		sb.append(StringUtil.pad(getPriceFormatted(), 10));
-		
+
 		return sb.toString();
 	}
 
