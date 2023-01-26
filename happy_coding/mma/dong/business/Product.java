@@ -1,7 +1,6 @@
 package dong.business;
 
 import java.text.NumberFormat;
-import dong.ui.StringUtil;
 
 /**
  * The <code>Product</code> class defines a product and is used by the
@@ -12,6 +11,7 @@ import dong.ui.StringUtil;
  */
 public class Product {
 
+	private int id;
 	private String code;
 	private String description;
 	private double price;
@@ -21,6 +21,7 @@ public class Product {
 	 * Create a <code>Product</code> with default value
 	 */
 	public Product() {
+		id = 0;
 		code = "";
 		description = "";
 		price = 0.0;
@@ -30,6 +31,21 @@ public class Product {
 		this.code = code;
 		this.description = description;
 		this.price = price;
+	}
+
+	public Product(int id, String code, String description, double price) {
+		this.id = id;
+		this.code = code;
+		this.description = description;
+		this.price = price;
+	}
+	
+	public int getID() {
+		return id;
+	}
+	
+	public void setID(int id) {
+		this.id = id;
 	}
 
 	/**
@@ -76,12 +92,9 @@ public class Product {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(StringUtil.pad(code, 15));
-		sb.append(StringUtil.pad(description, 40));
-		sb.append(StringUtil.pad(getPriceFormatted(), 10));
-
-		return sb.toString();
+		return "[code: " + code + ", " + 
+				"description: " + description + ", " +
+				"price: " + getPriceFormatted() + "]";
 	}
 
 	@Override

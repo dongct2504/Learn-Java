@@ -1,14 +1,17 @@
 package dong.ui;
 
-import dong.business.*;
-import dong.io.ProductIO;
 import java.util.List;
 
-public class UpdateProducts {
+import dong.business.Product;
+import dong.db.DBException;
+import dong.db.DBUtil;
+import dong.db.ProductDB;
+
+public class ProductManagerApp {
 
 	public static void main(String[] args) {
 		// Display welcome message
-		System.out.println("Welcome to the Product Manager\n");
+		System.out.println("Welcome to the Product Manager that use database");
 
 		getCommand();
 	}
@@ -44,18 +47,27 @@ public class UpdateProducts {
 			} else {
 				System.out.println("Invalid command, Try again!!");
 			}
-
 		}
-
 	}
 
 	public static void displayAllProducts() {
 		System.out.println("PRODUCT LIST");
 
-		List<Product> products = ProductIO.getAll();
+		try {
+			List<Product> products = ProductDB.getAll();
 
-		for (Product p : products) {
-			System.out.println(p.toString());
+			for (Product p : products) {
+				StringBuilder sb = new StringBuilder();
+				sb.append(StringUtil.pad(Integer.toString(p.getID()), 5));
+				sb.append(StringUtil.pad(p.getCode(), 15));
+				sb.append(StringUtil.pad(p.getDescription(), 40));
+				sb.append(StringUtil.pad(p.getPriceFormatted(), 10));
+
+				System.out.println(sb.toString());
+			}
+		} catch (DBException e) {
+			System.out.println("Error! Unable to get products");
+			System.out.println(e + "\n");
 		}
 	}
 
@@ -66,21 +78,11 @@ public class UpdateProducts {
 
 		Product product = new Product(code, description, price);
 
-		ProductIO.add(product);
-
-		System.out.println("\n" + product.getDescription() + " was added to the database");
 	}
 
 	public static void deleteProduct() {
 		String code = Console.getString("Enter product code to remove: ");
 
-		Product product = ProductIO.get(code);
-		if (product != null) {
-			ProductIO.delete(product);
-			System.out.println("\n" + product.getDescription() + " was delete from the database");
-		} else {
-			System.out.println("\nCan not remove product");
-		}
-
 	}
+
 }
