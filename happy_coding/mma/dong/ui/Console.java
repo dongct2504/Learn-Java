@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Console {
 
 	private static Scanner sc = new Scanner(System.in);
+	
+	private Console() {}
 
 	public static void displayLine() {
 		System.out.println();

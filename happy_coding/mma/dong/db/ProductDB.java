@@ -56,7 +56,7 @@ public class ProductDB {
 			}
 		} catch (SQLException e) {
 			throw new DBException(e);
-		}
+		} // you could code a finally block to close ResultSet but it automatically close when PreparedStatement close
 	}
 
 	public static void add(Product product) throws DBException {
@@ -68,7 +68,7 @@ public class ProductDB {
 			ps.setString(1, product.getCode());
 			ps.setString(2, product.getDescription());
 			ps.setDouble(3, product.getPrice());
-			ps.executeUpdate();
+			ps.executeUpdate(); // return an int value that indicate how many rows have affected
 		} catch (SQLException e) {
 			throw new DBException(e);
 		}
