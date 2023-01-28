@@ -7,7 +7,7 @@ import dong.business.Product;
 
 public class ProductIO {
 
-	private static final Path productsPath = Paths.get("./invoices/files/products.txt");
+	private static final Path productsPath = Paths.get("./mma/files/products.txt");
 	private static final File productsFile = productsPath.toFile();
 	private static final String FIELD_SEP = "\t";
 	private static List<Product> products = getAll();
