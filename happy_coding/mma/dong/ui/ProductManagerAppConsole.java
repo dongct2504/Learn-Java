@@ -7,7 +7,7 @@ import dong.db.ProductDB;
 import dong.db.DBException;
 import dong.db.DBUtil;
 
-public class ProductManagerApp {
+public class ProductManagerAppConsole {
 
 	public static void main(String[] args) {
 		// Display welcome message

@@ -16,11 +16,9 @@ public class ProductTableModel extends AbstractTableModel {
 
 	public ProductTableModel() {
 		try {
-			products = ProductDB
-					.getAll();
+			products = ProductDB.getAll();
 		} catch (DBException e) {
-			System.out
-					.println(e);
+			System.out.println(e);
 		}
 	}
 
@@ -52,11 +50,11 @@ public class ProductTableModel extends AbstractTableModel {
 	public String getColumnName(int columnIndex) {
 		return COLUMN_NAMES[columnIndex];
 	}
-	
+
 	public Product getProduct(int rowIndex) {
 		return products.get(rowIndex);
 	}
-	
+
 	public void databaseUpdated() {
 		try {
 			products = ProductDB.getAll();
@@ -67,12 +65,3 @@ public class ProductTableModel extends AbstractTableModel {
 	}
 
 }
-
-
-
-
-
-
-
-
-
