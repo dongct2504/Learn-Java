@@ -71,7 +71,19 @@ public class ProductManagerFrame extends JFrame {
 	}
 
 	private void doEditButton() {
+		int selectedRow = productTable.getSelectedRow();
+		if (selectedRow == -1) {
+			JOptionPane.showMessageDialog(this,
+					"Vui lòng lựa chọn sản phẩm!!",
+					"Chưa chọn",
+					JOptionPane.ERROR_MESSAGE);
+		} else {
+			Product product = productTableModel.getProduct(selectedRow);
 
+			ProductForm productForm = new ProductForm(this, "Edit Product", true, product);
+			productForm.setLocationRelativeTo(this);
+			productForm.setVisible(true);
+		}
 	}
 
 	private void doDeleteButton() {
@@ -84,20 +96,24 @@ public class ProductManagerFrame extends JFrame {
 		} else {
 			Product product = productTableModel.getProduct(selectedRow);
 			int ask = JOptionPane.showConfirmDialog(this,
-					"Bạn có chắc muốn xóa sản phẩm '" + 
-							product.getDescription() + "' ra khỏi database không?\n" + 
+					"Bạn có chắc muốn xóa sản phẩm '" +
+							product.getDescription() + "' ra khỏi database không?\n" +
 							"Điều này sẽ không thể khôi phục!!",
 					"Chắc chưa",
 					JOptionPane.YES_NO_OPTION);
 			if (ask == JOptionPane.YES_OPTION) {
 				try {
 					ProductDB.delete(product);
-					productTableModel.databaseUpdated();
+					fireDatabaseUpdateEvent();
 				} catch (DBException e) {
 					System.out.println(e);
 				}
 			}
 		}
+	}
+
+	public void fireDatabaseUpdateEvent() {
+		productTableModel.databaseUpdated();
 	}
 
 	private JTable buildProductTable() {
