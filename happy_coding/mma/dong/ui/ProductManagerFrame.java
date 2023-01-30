@@ -65,14 +65,13 @@ public class ProductManagerFrame extends JFrame {
 	}
 
 	private void doAddButton() {
-		JOptionPane.showMessageDialog(this,
-				"This feature hasn't been implemented yet.",
-				"Not yet implemented",
-				JOptionPane.ERROR_MESSAGE);
+		ProductForm productForm = new ProductForm(this, "Add Product", true);
+		productForm.setLocationRelativeTo(this);
+		productForm.setVisible(true);
 	}
 
 	private void doEditButton() {
-		doAddButton();
+
 	}
 
 	private void doDeleteButton() {
