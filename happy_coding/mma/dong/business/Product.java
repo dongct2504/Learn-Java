@@ -1,5 +1,6 @@
 package dong.business;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 /**
@@ -39,11 +40,11 @@ public class Product {
 		this.description = description;
 		this.price = price;
 	}
-	
+
 	public int getID() {
 		return id;
 	}
-	
+
 	public void setID(int id) {
 		this.id = id;
 	}
@@ -79,7 +80,16 @@ public class Product {
 	}
 
 	public String getPriceFormatted() {
-		return NumberFormat.getCurrencyInstance().format(price);
+
+		//		// this one will use the default format currency which is $ --> ($1,000,000.00)
+		//		NumberFormat nf = NumberFormat.getCurrencyInstance();
+		//		String priceFormatted = nf.format(price);
+
+		// this one will use the custom format currency --> (1,000,000 VNĐ)
+		DecimalFormat formatter = new DecimalFormat("###,###,###"); // DecimalFormat("###,###,###.00");
+		String priceFormatted = formatter.format(price) + " VNĐ";
+
+		return priceFormatted;
 	}
 
 	public void setPrice(double price) {
@@ -92,7 +102,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "[code: " + code + ", " + 
+		return "[code: " + code + ", " +
 				"description: " + description + ", " +
 				"price: " + getPriceFormatted() + "]";
 	}
