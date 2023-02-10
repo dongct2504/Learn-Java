@@ -21,8 +21,8 @@ public class ProductIO {
 			return products;
 		}
 
-		products = new ArrayList<>();
 		if (Files.exists(productsPath)) {
+			products = new ArrayList<>();
 			try (BufferedReader in = new BufferedReader(new FileReader(productsFile))) {
 				String line;
 				while ((line = in.readLine()) != null) {
@@ -55,22 +55,6 @@ public class ProductIO {
 		return null;
 	}
 
-	private static boolean saveAll() {
-		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(productsFile)))) {
-			// write all products in the array list to the file
-			for (Product p : products) {
-				out.print(p.getCode() + FIELD_SEP);
-				out.print(p.getDescription() + FIELD_SEP);
-				out.println(p.getPrice());
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		}
-		
-		return true;
-	}
-	
 	public static boolean add(Product p) {
 		products.add(p);
 		return saveAll();
@@ -92,6 +76,23 @@ public class ProductIO {
 		
 		return saveAll();
 	}
+
+	private static boolean saveAll() {
+		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(productsFile)))) {
+			// write all products in the array list to the file
+			for (Product p : products) {
+				out.print(p.getCode() + FIELD_SEP);
+				out.print(p.getDescription() + FIELD_SEP);
+				out.println(p.getPrice());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		return true;
+	}
+	
 }
 
 
