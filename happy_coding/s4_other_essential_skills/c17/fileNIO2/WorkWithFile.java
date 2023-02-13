@@ -6,7 +6,7 @@ import java.nio.file.*;
 public class WorkWithFile {
 
 	public static void main(String[] args) throws IOException {
-		String dirString = "./s4_other_essential_skills/c17/fileNIO2/files";
+		String dirString = "s4_other_essential_skills/c17/fileNIO2/files";
 
 		// Code that creates a directory if it doesn’t already exist
 		Path dirPath = Paths.get(dirString);
