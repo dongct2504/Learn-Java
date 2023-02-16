@@ -7,10 +7,10 @@ public class TowersOfHanoi {
 	
 	/**
 	 * Algorithm:
-	 * - Move the top n – 1 disks from Source to Auxiliary tower,
-	 * - Move the nth disk from Source to Destination tower,
-	 * - Move the n – 1 disks from Auxiliary tower to Destination tower.
-	 * - Transferring the top n – 1 disks from Source to Auxiliary tower can again be thought
+	 * 1) Move the top n – 1 disks from Source to Auxiliary tower,
+	 * 2) Move the nth disk from Source to Destination tower,
+	 * 3) Move the n – 1 disks from Auxiliary tower to Destination tower.
+	 * 4) Transferring the top n – 1 disks from Source to Auxiliary tower can again be thought
 	 * of as a fresh problem and can be solved in the same manner. Once we solve Towers
 	 * of Hanoi with three disks, we can solve it with any number of disks with the above
 	 * algorithm.
