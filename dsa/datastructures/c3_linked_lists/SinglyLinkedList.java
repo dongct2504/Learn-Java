@@ -134,6 +134,7 @@ public class SinglyLinkedList<E> {
 		if (isEmpty()) {
 			return null;
 		}
+
 		if (e.equals(head.getElement())) {
 			return removeFirst();
 		} else if (e.equals(tail.getElement())) {
@@ -144,12 +145,14 @@ public class SinglyLinkedList<E> {
 				if (e.equals(currentNode.getNext().getElement())) {
 					E removedElement = currentNode.getNext().getElement();
 					currentNode.setNext(currentNode.getNext().getNext());
+					size--;
 
 					return removedElement;
 				}
 				currentNode = currentNode.getNext();
 			}
 		}
+
 		return null;
 	}
 	
@@ -162,6 +165,7 @@ public class SinglyLinkedList<E> {
 			System.err.println("Invalid input!!");
 			return null;
 		}
+
 		if (position == 0) {
 			return removeFirst();
 		} else {
@@ -171,6 +175,7 @@ public class SinglyLinkedList<E> {
 			}
 			E removedElement = currentNode.getNext().getElement();
 			currentNode.setNext(currentNode.getNext().getNext());
+			size--;
 
 			return removedElement;
 		}
