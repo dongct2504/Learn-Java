@@ -1,5 +1,7 @@
 package c3_linked_lists;
 
+import java.util.ArrayList;
+
 public class SinglyLinkedList<E> {
 	
 	// inner class
@@ -31,7 +33,8 @@ public class SinglyLinkedList<E> {
 	
 	public SinglyLinkedList() {}
 
-	// access methods
+	/* ***** public access methods ***** */
+
 	public int getSize() {
 		return size;
 	}
@@ -56,7 +59,8 @@ public class SinglyLinkedList<E> {
 		return tail.getElement();
 	}
 	
-	// insert methods
+	/* ***** public update methods ***** */
+	
 	public void addFirst(E e) {
 		head = new Node<>(e, head);
 		if (isEmpty()) {
@@ -76,19 +80,19 @@ public class SinglyLinkedList<E> {
 		size++;
 	}
 
-	public void addMiddle(E e, int position) {
-		if (position < 0 || position > size) {
+	public void addMiddle(int index, E e) {
+		if (index < 0 || index > size) {
 			System.err.println("Invalid input!!");
 			return;
 		}
 		
-		if (position == 0) {
+		if (index == 0) {
 			addFirst(e);
-		} else if (position == size) {
+		} else if (index == size) {
 			addLast(e);
 		} else {
 			Node<E> currentNode = head;
-			for (int i = 0; i < position - 1; i++) {
+			for (int i = 0; i < index - 1; i++) {
 				currentNode = currentNode.getNext();
 			}
 			Node<E> newNode = new Node<>(e, currentNode.getNext());
@@ -156,21 +160,21 @@ public class SinglyLinkedList<E> {
 		return null;
 	}
 	
-	public E remove(int position) {
+	public E remove(int index) {
 		if (isEmpty()) {
 			return null;
 		}
 
-		if (position < 0 || position > size - 1) {
+		if (index < 0 || index > size - 1) {
 			System.err.println("Invalid input!!");
 			return null;
 		}
 
-		if (position == 0) {
+		if (index == 0) {
 			return removeFirst();
 		} else {
 			Node<E> currentNode = head;
-			for (int i = 0; i < position - 1; i++) {
+			for (int i = 0; i < index - 1; i++) {
 				currentNode = currentNode.getNext();
 			}
 			E removedElement = currentNode.getNext().getElement();
@@ -199,13 +203,18 @@ public class SinglyLinkedList<E> {
 	// test drive
 	public static void main(String[] args) {
 		SinglyLinkedList<String> listNode = new SinglyLinkedList<>();
-		listNode.addFirst("Dong");
-		listNode.addFirst("Nam");
-		listNode.addLast("Bac");
-		
-		listNode.addMiddle("11", 2);
-		
+		listNode.addLast("Dong");
+		listNode.addLast("Tay");
+		listNode.addLast("Nam");
+		listNode.addMiddle(2, "55");
 		listNode.printList();
+		
+		ArrayList<String> arrayList = new ArrayList<>();
+		arrayList.add("1");
+		arrayList.add("2");
+		arrayList.add("3");
+		arrayList.add(2, "33");
+		System.out.println(arrayList);
 	}
 
 }
