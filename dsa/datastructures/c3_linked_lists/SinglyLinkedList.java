@@ -3,34 +3,34 @@ package c3_linked_lists;
 import java.util.ArrayList;
 
 public class SinglyLinkedList<E> {
-	
+
 	// inner class
 	private static class Node<E> {
 		E element;
 		Node<E> next;
-		
+
 		public Node(E element, Node<E> next) {
 			this.element = element;
 			this.next = next;
 		}
-		
+
 		public E getElement() {
 			return element;
 		}
-		
+
 		public Node<E> getNext() {
 			return next;
 		}
-		
+
 		public void setNext(Node<E> next) {
 			this.next = next;
 		}
 	}
-	
+
 	private Node<E> head;
 	private Node<E> tail;
 	private int size;
-	
+
 	public SinglyLinkedList() {}
 
 	/* ***** public access methods ***** */
@@ -38,29 +38,29 @@ public class SinglyLinkedList<E> {
 	public int getSize() {
 		return size;
 	}
-	
+
 	public boolean isEmpty() {
 		return (size == 0);
 	}
-	
+
 	public E first() {
 		if (isEmpty()) {
 			return null;
 		}
-		
+
 		return head.getElement();
 	}
-	
+
 	public E last() {
 		if (isEmpty()) {
 			return null;
 		}
-		
+
 		return tail.getElement();
 	}
-	
+
 	/* ***** public update methods ***** */
-	
+
 	public void addFirst(E e) {
 		head = new Node<>(e, head);
 		if (isEmpty()) {
@@ -68,7 +68,7 @@ public class SinglyLinkedList<E> {
 		}
 		size++;
 	}
-	
+
 	public void addLast(E e) {
 		Node<E> newNode = new Node<>(e, null);
 		if (isEmpty()) {
@@ -85,12 +85,13 @@ public class SinglyLinkedList<E> {
 			System.err.println("Invalid input!!");
 			return;
 		}
-		
+
 		if (index == 0) {
 			addFirst(e);
 		} else if (index == size) {
 			addLast(e);
 		} else {
+			// move to the position node
 			Node<E> currentNode = head;
 			for (int i = 0; i < index - 1; i++) {
 				currentNode = currentNode.getNext();
@@ -100,33 +101,32 @@ public class SinglyLinkedList<E> {
 		}
 		size++;
 	}
-	
-	// delete methods
+
 	public E removeFirst() {
 		if (isEmpty()) {
 			return null;
 		}
-		
+
 		E removedElement = head.getElement();
 		head = head.getNext();
 		size--;
 		if (size == 0) {
 			tail = null;
 		}
-		
+
 		return removedElement;
 	}
-	
+
 	public E removeLast() {
 		if (isEmpty()) {
 			return null;
 		}
-		
+
 		Node<E> currentNode = head;
 		while (currentNode.getNext() != tail) {
 			currentNode = currentNode.getNext();
 		}
-		
+
 		E removedElement = tail.getElement();
 		tail = currentNode;
 		tail.setNext(null);
@@ -134,7 +134,7 @@ public class SinglyLinkedList<E> {
 		return removedElement;
 	}
 
-	public E remove(E e) {
+	public E removeMiddle(E e) {
 		if (isEmpty()) {
 			return null;
 		}
@@ -144,23 +144,25 @@ public class SinglyLinkedList<E> {
 		} else if (e.equals(tail.getElement())) {
 			return removeLast();
 		} else {
-			Node<E> currentNode = head;
-			while (currentNode.getNext().getNext() != null) {
-				if (e.equals(currentNode.getNext().getElement())) {
-					E removedElement = currentNode.getNext().getElement();
-					currentNode.setNext(currentNode.getNext().getNext());
-					size--;
-
-					return removedElement;
+			// move to the position node (before the node to be deleted)
+			try {
+				Node<E> currentNode = head;
+				while (!e.equals(currentNode.getNext().getElement())) {
+					currentNode = currentNode.getNext();
 				}
-				currentNode = currentNode.getNext();
+				E removedElement = currentNode.getNext().getElement();
+				currentNode.setNext(currentNode.getNext().getNext());
+				size--;
+
+				return removedElement;
+			} catch (NullPointerException ex) {
+				System.err.println("Can't find '" + e + "' try another");
+				return null;
 			}
 		}
-
-		return null;
 	}
-	
-	public E remove(int index) {
+
+	public E removeMiddle(int index) {
 		if (isEmpty()) {
 			return null;
 		}
@@ -172,7 +174,10 @@ public class SinglyLinkedList<E> {
 
 		if (index == 0) {
 			return removeFirst();
+		} else if (index == size - 1) {
+			return removeLast();
 		} else {
+			// move to the position node
 			Node<E> currentNode = head;
 			for (int i = 0; i < index - 1; i++) {
 				currentNode = currentNode.getNext();
@@ -184,13 +189,13 @@ public class SinglyLinkedList<E> {
 			return removedElement;
 		}
 	}
-	
+
 	public void clearList() {
 		head = null;
 		tail = null;
 		size = 0;
 	}
-	
+
 	// print list
 	public void printList() {
 		Node<E> currentNode = head;
@@ -199,7 +204,7 @@ public class SinglyLinkedList<E> {
 			currentNode = currentNode.getNext();
 		}
 	}
-	
+
 	// test drive
 	public static void main(String[] args) {
 		SinglyLinkedList<String> listNode = new SinglyLinkedList<>();
@@ -207,8 +212,9 @@ public class SinglyLinkedList<E> {
 		listNode.addLast("Tay");
 		listNode.addLast("Nam");
 		listNode.addMiddle(2, "55");
+		listNode.removeMiddle("dd");
 		listNode.printList();
-		
+
 		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList.add("1");
 		arrayList.add("2");
@@ -218,14 +224,3 @@ public class SinglyLinkedList<E> {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-

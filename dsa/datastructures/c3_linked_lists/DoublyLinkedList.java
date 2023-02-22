@@ -93,6 +93,7 @@ public class DoublyLinkedList<E> {
 		} else if (index == size) {
 			addLast(e);
 		} else {
+			// move to the position node
 			Node<E> currentNode = header.getNext();
 			for (int i = 0; i < index - 1; i++) {
 				currentNode = currentNode.getNext();
@@ -106,6 +107,83 @@ public class DoublyLinkedList<E> {
 		predecessor.setNext(newNode);
 		successor.setPrev(newNode);
 		size++;
+	}
+	
+	public E removeFirst() {
+		if (isEmpty()) {
+			return null;
+		}
+		
+		return removeBetween(header.getNext());
+	}
+
+	public E removeLast() {
+		if (isEmpty()) {
+			return null;
+		}
+		
+		return removeBetween(trailer.getPrev());
+	}
+	
+	public E removeMiddle(E e) {
+		if (isEmpty()) {
+			return null;
+		}
+		
+		if (e.equals(header.getNext().getElement())) {
+			return removeFirst();
+		} else if (e.equals(trailer.getPrev().getElement())) {
+			return removeLast();
+		} else {
+			// Move to the node that need to be deleted (not the position node).
+			try {
+				Node<E> currentNode = header.getNext();
+				while (!e.equals(currentNode.getElement())) {
+					currentNode = currentNode.getNext();
+				}
+
+				return removeBetween(currentNode);
+			} catch (NullPointerException ex) {
+				System.err.println("Can't find '" + e + "' try another");
+				return null;
+			}
+		}
+	}
+	
+	public E removeMiddle(int index) {
+		if (isEmpty()) {
+			return null;
+		}
+
+		if (index < 0 || index > size - 1) {
+			System.err.println("Invalid input!!");
+			return null;
+		}
+		
+		if (index == 0) {
+			return removeFirst();
+		} else if (index == size - 1) {
+			return removeLast();
+		} else {
+			// Move to the node that need to be deleted (not the position node).
+			Node<E> currentNode = header.getNext();
+			for (int i = 0; i < index; i++) {
+				currentNode = currentNode.getNext();
+			}
+
+			return removeBetween(currentNode);
+		}
+	}
+	
+	private E removeBetween(Node<E> deleteNode) {
+		Node<E> predecessor = deleteNode.getPrev();
+		Node<E> successor = deleteNode.getNext();
+		
+		predecessor.setNext(successor);
+		successor.setPrev(predecessor);
+		size--;
+		
+		return deleteNode.getElement();
 	}
 	
 	// print list
@@ -123,6 +201,7 @@ public class DoublyLinkedList<E> {
 		listNode.addLast("Tay");
 		listNode.addLast("Nam");
 		listNode.addMiddle(2, "55");
+		listNode.removeMiddle("ay");
 		listNode.printList();
 	}
 
