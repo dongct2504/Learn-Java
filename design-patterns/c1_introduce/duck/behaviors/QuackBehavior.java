@@ -1,6 +1,6 @@
 package duck.behaviors;
 
-public interface QuackBehaviors {
+public interface QuackBehavior {
 
 	public void quack();
 }
