@@ -1,4 +1,4 @@
-package duck.behaviors;
+package duck.behavior.fly;
 
 public interface FlyBehavior {
 	
