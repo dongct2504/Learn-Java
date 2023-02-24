@@ -1,5 +1,9 @@
 package c3_linked_lists;
 
+/**
+ * @author blackd000
+ * @param <E>
+ */
 public class CircularlyLinkedList<E> {
 
 	private static class Node<E> {

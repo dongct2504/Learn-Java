@@ -1,5 +1,9 @@
 package c3_linked_lists;
 
+/**
+ * @author blackd000
+ * @param <E>
+ */
 public class DoublyLinkedList<E> {
 
 	private class Node<E> {

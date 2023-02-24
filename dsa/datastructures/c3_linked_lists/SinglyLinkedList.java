@@ -2,6 +2,10 @@ package c3_linked_lists;
 
 import java.util.ArrayList;
 
+/**
+ * @author blackd000
+ * @param <E>
+ */
 public class SinglyLinkedList<E> {
 
 	// inner class
