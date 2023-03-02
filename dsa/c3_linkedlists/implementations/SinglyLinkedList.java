@@ -1,4 +1,4 @@
-package c3_linked_lists;
+package implementations;
 
 import java.util.ArrayList;
 
@@ -51,7 +51,6 @@ public class SinglyLinkedList<E> {
 		if (isEmpty()) {
 			return null;
 		}
-
 		return head.getElement();
 	}
 
@@ -59,7 +58,6 @@ public class SinglyLinkedList<E> {
 		if (isEmpty()) {
 			return null;
 		}
-
 		return tail.getElement();
 	}
 
@@ -117,7 +115,6 @@ public class SinglyLinkedList<E> {
 		if (size == 0) {
 			tail = null;
 		}
-
 		return removedElement;
 	}
 
@@ -134,7 +131,7 @@ public class SinglyLinkedList<E> {
 		E removedElement = tail.getElement();
 		tail = currentNode;
 		tail.setNext(null);
-
+		size--;
 		return removedElement;
 	}
 
@@ -157,7 +154,6 @@ public class SinglyLinkedList<E> {
 				E removedElement = currentNode.getNext().getElement();
 				currentNode.setNext(currentNode.getNext().getNext());
 				size--;
-
 				return removedElement;
 			} catch (NullPointerException ex) {
 				System.err.println("Can't find '" + e + "' try another");
@@ -189,7 +185,6 @@ public class SinglyLinkedList<E> {
 			E removedElement = currentNode.getNext().getElement();
 			currentNode.setNext(currentNode.getNext().getNext());
 			size--;
-
 			return removedElement;
 		}
 	}
@@ -208,6 +203,34 @@ public class SinglyLinkedList<E> {
 			currentNode = currentNode.getNext();
 		}
 	}
+	
+	/* ***** some problems ***** */
+	
+	/**
+	 * Algorithm:
+	 *   1) Check if value of n is not more than length of the linked list
+	 *   2) Get the (length - n)th node from the beginning
+	 * - Time complexity: O(n) where n is the size of the linked list 
+	 * - Auxiliary Space: O(1)
+	 * 
+	 * @param n  the index of the nth node we need to find
+	 * @return E
+	 * @throws IndexOutOfBoundsException
+	 */
+	public E findNthNodeFromEnd(int n) throws IndexOutOfBoundsException {
+		// 1) Check if value of n is not more than length of the linked list
+		if (n > size) {
+			throw new IndexOutOfBoundsException("fewer number of nodes in the list");
+		}
+		
+		Node<E> currentNode = head;
+		// 2) Get the (len-N)th node from the beginning
+		for (int i = 0; i < size - n; i++) {
+			currentNode = currentNode.getNext();
+		}
+		return currentNode.getElement();
+	}
+	
 
 	// test drive
 	public static void main(String[] args) {

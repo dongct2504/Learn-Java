@@ -1,4 +1,4 @@
-package c3_linked_lists;
+package implementations;
 
 /**
  * @author blackd000

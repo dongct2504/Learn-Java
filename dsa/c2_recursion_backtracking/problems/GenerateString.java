@@ -1,11 +1,11 @@
-package c2_recursion_backtracking;
+package problems;
 
 import java.util.Arrays;
 
 /**
+ * 3/67) Generate all the strings of n bits. Assume A[0..n – 1] is an array of size n.
+ * 
  * @author blackd000
- * 3/67) Generate all the strings of n bits. Assume A[0..n – 1] 
- * is an array of size n.
  */
 public class GenerateString {
 

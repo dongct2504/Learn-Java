@@ -1,11 +1,13 @@
-package c4_stacks;
+package implementations;
 
-import c3_linked_lists.SinglyLinkedList;
-
+/**
+ * @author blackd000
+ * @param <E> Element
+ */
 public class LinkedStack<E> implements Stack<E> {
 
 	private SinglyLinkedList<E> list;
-	
+
 	public LinkedStack() {
 		list = new SinglyLinkedList<>();
 	}
@@ -16,7 +18,7 @@ public class LinkedStack<E> implements Stack<E> {
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public boolean empty() {
 		return list.isEmpty();
 	}
 
@@ -36,11 +38,3 @@ public class LinkedStack<E> implements Stack<E> {
 	}
 
 }
-
-
-
-
-
-
-
-

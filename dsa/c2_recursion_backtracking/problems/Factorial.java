@@ -1,10 +1,19 @@
-package c2_recursion_backtracking;
+package problems;
 
 import java.util.Scanner;
 
+/**
+ * @author blackd000
+ */
 public class Factorial {
 
-	// recursive definition of method factorial
+	/**
+	 * Recursive definition of method factorial
+	 * 
+	 * @param number
+	 * @return the factorial number
+	 * @throws IllegalArgumentException
+	 */
 	public static long factorial(long number) throws IllegalArgumentException {
 		if (number < 0) { // argument must be nonnegative
 			throw new IllegalArgumentException(); 

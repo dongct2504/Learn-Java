@@ -1,4 +1,4 @@
-package c2_recursion_backtracking;
+package problems;
 
 /**
  * @author blackd000
@@ -7,13 +7,18 @@ public class TowersOfHanoi {
 	
 	/**
 	 * Algorithm:
-	 * 1) Move the top n – 1 disks from Source to Auxiliary tower,
-	 * 2) Move the nth disk from Source to Destination tower,
-	 * 3) Move the n – 1 disks from Auxiliary tower to Destination tower.
-	 * 4) Transferring the top n – 1 disks from Source to Auxiliary tower can again be thought
-	 * of as a fresh problem and can be solved in the same manner. Once we solve Towers
-	 * of Hanoi with three disks, we can solve it with any number of disks with the above
-	 * algorithm.
+	 *   1) Move the top n – 1 disks from Source to Auxiliary tower,
+	 *   2) Move the nth disk from Source to Destination tower,
+	 *   3) Move the n – 1 disks from Auxiliary tower to Destination tower.
+	 *   4) Transferring the top n – 1 disks from Source to Auxiliary tower can again 
+	 *   be thought of as a fresh problem and can be solved in the same manner. Once 
+	 *   we solve Towers of Hanoi with three disks, we can solve it with any number 
+	 *   of disks with the above algorithm.
+	 *   
+	 * @param disk
+	 * @param source
+	 * @param destination
+	 * @param auxiliary
 	 */
 	public static void towerOfHanoi(int disk, String source, String destination, String auxiliary) {
 		// if only 1 disk, make the move and return
