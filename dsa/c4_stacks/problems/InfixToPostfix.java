@@ -11,8 +11,7 @@ public class InfixToPostfix {
 
 	/**
 	 * Algorithm: 
-	 *   1) If the scanned character is an operand (toán hạng),
-	 * {{c1::output}} it. 
+	 *   1) If the scanned character is an operand (toán hạng), {{c1::output}} it. 
 	 *   2) If the scanned character is a left parenthesis ‘(‘, {{c1::push}} it to
 	 * the stack. 
 	 *   3) If the scanned character is a right parenthesis ‘)’, {{c1::pop}} the stack and

@@ -1,10 +1,6 @@
-package implementations;
+package implementations.stack;
 
 /**
- * A collection of objects that are inserted and removed according to the
- * last-in first-out principle (LIFO). Although similar in purpose, this
- * interface differs from java.util.Stack
- * 
  * @author blackd000
  * @param <E>
  */

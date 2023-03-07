@@ -1,4 +1,6 @@
-package implementations;
+package implementations.stack;
+
+import implementations.SinglyLinkedList;
 
 /**
  * @author blackd000
