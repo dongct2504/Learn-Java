@@ -1,0 +1,16 @@
+1677640476145	Rename resource 'fullpic'
+1677640535749	Rename resource 'image'
+1677640569508	Move 2 resources to 'thumbnail'
+1677641018123	Delete element
+1677641046820	Delete element
+1677676065868	Rename resource 'applewatch'
+1677767848039	Rename resource 'register.jsp'
+1677768285506	Move 'login_user.jsp' to 'catalog'
+1677768333234	Encapsulate field 'userName'
+1677769113078	Encapsulate field 'password'
+1677779769311	Rename type 'LoadProducts'
+1677856399220	Rename type 'DBUtil'
+1677870976339	Rename local variable 'cookieName'
+1677870982444	Rename local variable 'cookieValue'
+1677876725458	Move 2 resources to 'user_profile'
+1677951782222	Delete element

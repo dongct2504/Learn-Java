@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+<Context path="/use-email-14">
+	<Resource name="jdbc/dongDB" auth="Container"
+		maxActive="100" maxidle="30" maxWait="10000" username="dong_user"
+		password="113" driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/dong?autoReconnect=true"
+		logAbandoned="true" removeAbandoned="true"
+		removeAbandonedTimeout="60" type="javax.sql.DataSource" />
+
+	<Realm className="org.apache.catalina.realm.DataSourceRealm" debug="99" 
+    dataSourceName="jdbc/dongDB" localDataSource="true"
+		userTable="user_pass" userNameCol="user_name" userCredCol="passwd" 
+		userRoleTable="user_role" roleNameCol="role_name" />
+</Context>
+-->
+
+<Context path="/use-email-14">
+  <Realm className="org.apache.catalina.realm.JDBCRealm" 
+         connectionName="root" connectionPassword="01646245557" 
+         connectionURL="jdbc:mysql://localhost:3306/dong" 
+         debug="99" driverName="com.mysql.cj.jdbc.Driver" 
+         roleNameCol="role_name" userCredCol="passwd" userNameCol="user_name" 
+         userRoleTable="user_role" userTable="user_pass" />
+</Context>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
+  <display-name>sessions_cookies_7</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <display-name>SessionServlet</display-name>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>dong.learn.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/session</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetSessionServlet</display-name>
+    <servlet-name>GetSessionServlet</servlet-name>
+    <servlet-class>dong.learn.GetSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSessionServlet</servlet-name>
+    <url-pattern>/getSession</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DownloadServlet</display-name>
+    <servlet-name>DownloadServlet</servlet-name>
+    <servlet-class>dong.download.DownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadServlet</servlet-name>
+    <url-pattern>/download</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+    <!-- the session is invalidated if a client doesn't access the session object within 30 minutes -->
+    <session-timeout>30</session-timeout>
+  </session-config>
+  
+  <!-- disable scripting -->
+  <jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>*.jsp</url-pattern>
+  		<scripting-invalid>true</scripting-invalid>
+  	</jsp-property-group>
+  </jsp-config>
+  
+  <context-param>
+  	<param-name>email</param-name>
+  	<param-value>youremail@gmail.com</param-value>
+  </context-param>
+</web-app>
+
+
+
+
+
+
+
+
+
+

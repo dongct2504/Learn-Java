@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Survey User</title>
+  <link rel="stylesheet" href="styles/survey.css">
+</head>
+<body>
+  <form action="survey" method="post">
+    <img src="images/murachlogo.jpg">
+    <h1>Survey</h1>
+    <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
+
+    <!-- ======================== text box ============================================ -->
+    <h2>Your information:</h2>
+    <!-- these are text boxes -->
+    <label>First Name</label> <input type="text" name="firstName" required><br>
+    <label>Last Name</label> <input type="text" name="lastName" required><br>
+    <label>Email</label> <input type="email" name="email" required><br>
+    <label>Date Of Birth</label> <input type="text" name="dateOfBirth"><br>
+
+
+    <!-- ======================== radio button, check box =============================== -->
+    <h2>How did you hear about us?</h2>
+    <p>
+      <!-- 
+        This is a group of radio buttons
+        And I group these radio buttons by having a same name attribute
+      -->
+      <input type="radio" name="heardFrom" value="Search Engine" checked>Search engine 
+      <input type="radio" name="heardFrom" value="Friend">Word of mouth 
+      <input type="radio" name="heardFrom" value="Social Media">Social Media
+      <input type="radio" name="heardFrom" value="Other">Other
+    </p>
+
+    <h2>Would you like to receive announcements about new CDs and special offers?</h2>
+    <p>
+      <!-- These are check boxes, these are independent -->
+      <input type="checkbox" name="wantsUpdates">YES, I'd like that.
+      <input type="checkbox" name="emailOK">YES, please send me email announcements.
+    </p>
+
+
+    <!-- ======================== combo box, list box =================================== -->
+    <p>
+      <!-- 
+        This is a combo box because it doesn't have size attribute and 
+        multiple attribute (if it have it will be list box)
+      -->
+      Please contact me by: 
+        <select name="contactVia">
+          <option value="Both" selected>Email or postal mail</option>
+          <option value="Email">Email only</option>
+          <option value="Postal Mail">Postal mail only</option>
+        </select>
+    </p>
+    
+    <p>
+      <!-- This is a list box because it have size attribute and multiple attribute -->
+      Which countries do you like:<br>
+        <select name="country" size=3 multiple>
+          <option value="Vietnam">Viet Nam</option>
+          <option value="USA">United Stated</option>
+          <option value="India">India</option>
+          <option value="China">China</option>
+          <option value="Mexico">Mexico</option>
+          <option value="France">France</option>
+        </select>
+    </p>
+
+    <!-- ========================================================================= -->
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+</html>
+
+

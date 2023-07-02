@@ -1,0 +1,416 @@
+@charset "UTF-8";
+
+header, footer, section, aside, nav, article, figure, div {
+	display: block;
+}
+
+html {
+	background-image: -moz-linear-gradient(top, white 0%, #facd8a 100%);
+}
+
+body {
+	font-size: 18px;
+	width: 1226px;
+	background-color: white;
+	margin: 15px auto; /* make it center and pad top 15px */
+	padding: 15px 25px;
+	border: 1px solid black;
+}
+
+section, aside, h1, h2, p, ul {
+	margin: 0;
+	padding: 0;
+}
+
+section, aside {
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+
+p {
+	padding-bottom: 0.5em;
+	word-wrap: break-word;
+}
+
+/* the styles for the link */
+a {
+	font-weight: bold;
+}
+
+a:link {
+	color: green;
+}
+
+a:visited {
+	color: green;
+}
+
+a:hover, a:focus {
+	color: #38699f;
+}
+
+.title_link a {
+	font-weight: normal;
+}
+
+.title_link a:link {
+	color: #222;
+}
+
+.title_link a:visited {
+	color: #222;
+}
+
+.title_link a:hover, a:focus {
+	color: #38699f;
+}
+
+ul {
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+li {
+	padding-bottom: 0.25em;
+}
+
+p {
+	padding-bottom: 0.5em;
+}
+
+em {
+	font-weight: bold;
+}
+
+/* the styles for the header */
+header {
+	padding-bottom: 2em;
+	border-bottom: 2px solid #ef9c00;
+}
+
+header h1 {
+	color: orange;
+	margin-left: 120px;
+	margin-bottom: 0.25em;
+}
+
+header h2 {
+	color: blue;
+	font-style: italic;
+	margin-left: 120px;
+}
+
+header img {
+	float: left;
+}
+
+/* the styles for the top navigation bar */
+#nav_barA {
+	width: 926px;
+	float: left;
+	border-bottom: 2px solid #ef9c00;
+}
+
+#nav_barA form {
+	margin-bottom: .3em;
+	padding-top: .3em;
+	text-align: right;
+}
+
+#nav_barA input[type=text] {
+	font-size: 19px;
+	width: 680px;
+}
+
+#nav_barA button {
+	font-size: 19px;
+	background: teal;
+	color: white;
+	cursor: pointer;
+}
+
+#nav_barB {
+	width: 300px;
+	float: right;
+	border-bottom: 2px solid #ef9c00;
+}
+
+#nav_barB ul {
+	margin-bottom: .5em;
+	padding-top: .5em;
+	list-style: none;
+}
+
+#nav_barB li {
+	display: inline;
+	padding: 0 1.5em;
+	border-left: 2px solid black;
+}
+
+/* the styles for the side navigation bar */
+#sidebarA ul {
+	margin-left: 0;
+	list-style: none;
+}
+
+#sidebarA li {
+	margin-bottom: .5em;
+}
+
+/* the styles for the section (index pages) */
+section {
+	width: 726px;
+	padding-right: 20px;
+	padding-left: 20px;
+	float: left;
+}
+
+section h1 {
+	color: brown;
+	margin-bottom: 0.35em;
+}
+
+section h2 {
+	margin-bottom: 0.35em;
+}
+
+section img {
+	float: left;
+	margin-right: 1.5em;
+}
+
+.top_margin {
+	margin-top: 1em;
+}
+
+/* the styles for the sidebars */
+aside h1 {
+	font-size: 135%;
+	color: red;
+	padding-bottom: .5em;
+}
+
+aside h2 {
+	font-size: 115%;
+	color: green;
+	padding-bottom: .5em;
+}
+
+aside p {
+	font-size: 90%;
+	margin-bottom: .5em;
+}
+
+aside img {
+	margin-bottom: 1em;
+}
+
+#sidebarA {
+	width: 180px;
+	height: 95vh;
+	float: left;
+	padding-left: 10px;
+	border: 2px solid #ef9c00;
+}
+
+#sidebarB {
+	width: 254px;
+	float: right;
+	height: 95vh;
+	padding-left: 10px;
+	border: 2px solid #ef9c00;
+}
+
+aside img {
+	float: none;
+}
+
+/* the styles for the footer */
+footer {
+	clear: both;
+	margin-top: 1em;
+	border-top: 2px solid #ef9c00;
+	padding-top: 0.7em;
+}
+
+footer p {
+	font-size: 90%;
+	text-align: center;
+}
+
+/* Style the item */
+#display_item {
+	width: 162px;
+	height: 238px;
+	float: left;
+	padding: 8px;
+	margin: 5px 1px;
+	/* top and bottom margin will be 5px, left and right margin will be 1px */
+	border: 0.75px solid lightgray;
+}
+
+/* The styles for the classes */
+.pad_top {
+	padding-top: 0.25em;
+}
+
+.no_pad_top {
+	padding-top: 0;
+}
+
+.margin_left {
+	margin-left: 0.5em;
+}
+
+.no_underline {
+	text-decoration: none;
+}
+
+.price {
+	font-weight: bold;
+	color: #d0021b;
+	padding-top: 0.5em;
+}
+
+.description {
+	width: 726px;
+	float: left;
+	margin-top: 1em;
+}
+
+/* styles for buy add to cart */
+#module_add_cart {
+	width: 726px;
+	margin-top: 1em;
+	float: right;
+}
+
+.button_style {
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	padding: 0;
+	width: 200px;
+	height: 44px;
+	border: 0;
+	float: right;
+	margin: 0px 5px;
+	background: #ffb916;
+	cursor: pointer;
+}
+
+/* styles for the register, login form */
+#register_login_form label {
+	float: left;
+	width: 8em;
+	margin-bottom: 0.5em;
+	padding-top: .3em;
+	font-weight: bold;
+}
+
+#register_login_form input[type="text"], input[type="email"], input[type=password]
+	{
+	font-size: 16px;
+	width: 23em;
+	margin-left: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+/* styles for the register, login, logout button */
+.register_login_logout {
+	font-size: 16px;
+	text-align: center;
+	width: 128px;
+	height: 32px;
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+	cursor: pointer;
+}
+
+br {
+	clear: both;
+}
+
+/* the style for the cart pages */
+table {
+	border: none;
+}
+
+th {
+	vertical-align: bottom;
+	text-align: left;
+}
+
+td {
+	vertical-align: top;
+}
+
+th, td {
+	padding: .3em;
+}
+
+.top {
+	vertical-align: top;
+}
+
+#cart {
+	width: 726px;
+}
+
+/*
+#card table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-bottom: 0.5em;
+}
+
+#card th, td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 0.5em;
+}
+*/
+#cart form {
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+}
+
+#cart label {
+	float: left;
+	width: 5em;
+	font-weight: bold;
+}
+
+#cart input[type="button"] {
+	margin-left: 0.5em;
+}
+
+#cart select {
+	margin-left: 0.5em;
+	margin-right: 0.2em;
+}
+
+.cart_row input[type="text"] {
+	width: 2em;
+	margin-left: 0em;
+}
+
+.quantity_text {
+	width: 2em;
+}
+
+.float_left {
+	float: left;
+	margin-right: 1em;
+}
+
+.continue_checkout {
+	font-size: 16px;
+	text-align: center;
+	width: 166px;
+	height: 40px;
+	float: left;
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+	cursor: pointer;
+}
